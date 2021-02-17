@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import configData from "./config.json";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <p>
           Ray Nham - Octopus Learning
         </p>
+        <p>{configData.greeting}</p>
         <a
           className="App-link"
           href="https://reactjs.org"

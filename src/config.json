@@ -1,0 +1,5 @@
+{
+  "serverUrl": "https://example.com/api/",
+  "greeting": "Hello world",
+  "environment": "Development"
+}
