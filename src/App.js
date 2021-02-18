@@ -1,19 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 
 function App() {
   const [data , setData] = useState(null)
-    fetch("./config.json").then(
-        function(res){
-            return res.json()
-        }).then(function(data){
-        setData(data)
-    }).catch(
-        function(err){
-            console.log(err, ' error')
+  useEffect(() => {
+    const fetchData = async () => {
+      fetch("./config.json").then(
+        function(response) {
+          return response.json();
         }
-    )
+      ).then(function(data) {
+        setData(data);
+      });
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
