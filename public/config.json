@@ -1,5 +1,7 @@
 {
-  "serverUrl": "https://example.com/api/",
-  "greeting": "Hello world",
-  "environment": "Development"
+  "app": {
+    "serverUrl": "https://example.com/api/",
+    "greeting": "Hello world",
+    "environment": "Development"
+  }
 }
