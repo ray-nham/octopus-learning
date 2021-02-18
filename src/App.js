@@ -30,6 +30,7 @@ function App() {
           Ray Nham - Octopus Learning
         </p>
         <p>{data && data.app  ? data.app.environment : "Dev"}</p>
+        <p>{data && data.app  ? data.app.greeting : "Hello"}</p>
         <a
           className="App-link"
           href="https://reactjs.org"
