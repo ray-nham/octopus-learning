@@ -5,8 +5,13 @@ import React,{useState, useEffect} from "react";
 function App() {
   const [data , setData] = useState(null)
   useEffect(() => {
+    const options = {
+      method: method,
+      headers: new Headers({'content-type': 'application/json'}),
+      mode: 'no-cors'
+    };
     const fetchData = async () => {
-      fetch("./config.json").then(
+      fetch("./config.json", options).then(
         function(response) {
           return response.json();
         }
