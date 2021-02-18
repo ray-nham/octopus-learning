@@ -1,8 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import configData from "./config.json";
+import React,{useState} from "react";
 
 function App() {
+  const [data , setData] = useState(null)
+    fetch("./config.json").then(
+        function(res){
+            return res.json()
+        }).then(function(data){
+        setData(data)
+    }).catch(
+        function(err){
+            console.log(err, ' error')
+        }
+    )
   return (
     <div className="App">
       <header className="App-header">
@@ -10,7 +21,7 @@ function App() {
         <p>
           Ray Nham - Octopus Learning
         </p>
-        <p>{configData.greeting}</p>
+        <p>{data ? data.greeting : "Hello"}</p>
         <a
           className="App-link"
           href="https://reactjs.org"
